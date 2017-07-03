@@ -34,8 +34,6 @@
             <xs:element name="croissance" type="xs:double"/> <!-- revenu actuel du produit --> 
             <xs:element name="revenu" type="xs:double"/> <!-- nombre de milli-secondes nécessaire pour créer le produit --> 
             <xs:element name="vitesse" type="xs:int"/>
-            Page
-            12
             <!-- quantité actuelle du produit détenu par le joueur --> 
             <xs:element name="quantite" type="xs:int"/> <!-- temps restant pour terminer la création du produit en millisecondes --> 
             <xs:element name="timeleft" type="xs:long"/> <!-- booléen qui indique si le manager de ce produit est débloqué ou pas --> 
