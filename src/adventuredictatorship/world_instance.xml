@@ -9,90 +9,225 @@ and open the template in the editor.
 <world
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xsi:noNamespaceSchemaLocation='../schemas/world.xsd'>
-    <name>Dystopia</name>
-    <logo></logo>
+    <name>Star Wars World</name>
+    <logo>/logos/world.jpg</logo>
     <money>0</money>
     <score>0</score>
     <totalangels>0</totalangels>
     <activeangels>0</activeangels>
     <angelbonus>0</angelbonus>
-    <lastupdate></lastupdate>
+    <lastupdate>00/00/00:00:00</lastupdate>
     <products>
         <product>
             <id>1</id>
-            <name></name>
-            <logo></logo>
-            <cout></cout>
-            <croissance></croissance>
-            <revenu></revenu>
-            <vitesse></vitesse>
-            <quantite></quantite>
-            <timeleft></timeleft>
-            <managerUnlocked></managerUnlocked>
+            <name>Stormtrooper</name>
+            <logo>/logos/stormtrooper.jpg</logo>
+            <cout>2</cout>
+            <croissance>1</croissance>
+            <revenu>1</revenu>
+            <vitesse>5</vitesse>
+            <quantite>0</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked>false</managerUnlocked>
             <palliers>
+                <pallier>
+                    <name>palier1</name>
+                    <logo>/logos/palier1</logo>
+                    <seuil>200</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>palier2</name>
+                    <logo>/logos/palier1</logo>
+                    <seuil>1000</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>palier3</name>
+                    <logo>/logos/palier1</logo>
+                    <seuil>5000</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
             </palliers>
         </product>
         <product>
-            <id></id>
-            <name></name>
-            <logo></logo>
-            <cout></cout>
-            <croissance></croissance>
-            <revenu></revenu>
-            <vitesse></vitesse>
-            <quantite></quantite>
-            <timeleft></timeleft>
-            <managerUnlocked></managerUnlocked>
+            <id>2</id>
+            <name>TIE Starfighter</name>
+            <logo>/logos/tie.jpg</logo>
+            <cout>5</cout>
+            <croissance>2</croissance>
+            <revenu>1</revenu>
+            <vitesse>8</vitesse>
+            <quantite>0</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked>false</managerUnlocked>
             <palliers>
+                <pallier>
+                    <name>palier1</name>
+                    <logo>/logos/palier1</logo>
+                    <seuil>200</seuil>
+                    <idcible>2</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>palier2</name>
+                    <logo>/logos/palier1</logo>
+                    <seuil>1000</seuil>
+                    <idcible>2</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>palier3</name>
+                    <logo>/logos/palier1</logo>
+                    <seuil>5000</seuil>
+                    <idcible>2</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
             </palliers>
         </product>
         <product>
-            <id></id>
-            <name></name>
-            <logo></logo>
-            <cout></cout>
-            <croissance></croissance>
-            <revenu></revenu>
-            <vitesse></vitesse>
-            <quantite></quantite>
-            <timeleft></timeleft>
-            <managerUnlocked></managerUnlocked>
+            <id>10</id>
+            <name>Death Star</name>
+            <logo>/logos/deathstar.jpg</logo>
+            <cout>1000000000</cout>
+            <croissance>50000</croissance>
+            <revenu>20000000</revenu>
+            <vitesse>100</vitesse>
+            <quantite>0</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked>false</managerUnlocked>
             <palliers>
+                <pallier>
+                    <name>palier1</name>
+                    <logo>/logos/palier1</logo>
+                    <seuil>200</seuil>
+                    <idcible>10</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>palier2</name>
+                    <logo>/logos/palier1</logo>
+                    <seuil>1000</seuil>
+                    <idcible>10</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
+                <pallier>
+                    <name>palier3</name>
+                    <logo>/logos/palier1</logo>
+                    <seuil>5000</seuil>
+                    <idcible>10</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>GAIN</typeratio>
+                    <unlocked>false</unlocked>
+                </pallier>
             </palliers>
         </product>
     </products>
     <allunlocks>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
-            <unlocked></unlocked>
+            <name>apalier1</name>
+            <logo>/logos/palier1</logo>
+            <seuil>200</seuil>
+            <idcible>1</idcible>
+            <ratio>2</ratio>
+            <typeratio>GAIN</typeratio>
+            <unlocked>false</unlocked>
         </pallier>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
-            <unlocked></unlocked>
+            <name>apalier2</name>
+            <logo>/logos/palier1</logo>
+            <seuil>1000</seuil>
+            <idcible>1</idcible>
+            <ratio>2</ratio>
+            <typeratio>GAIN</typeratio>
+            <unlocked>false</unlocked>
         </pallier>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
-            <unlocked></unlocked>
+            <name>apalier3</name>
+            <logo>/logos/palier1</logo>
+            <seuil>5000</seuil>
+            <idcible>1</idcible>
+            <ratio>2</ratio>
+            <typeratio>GAIN</typeratio>
+            <unlocked>false</unlocked>
         </pallier>
     </allunlocks>
     <upgrades>
+        <pallier>
+            <name>upalier1</name>
+            <logo>/logos/palier1</logo>
+            <seuil>200</seuil>
+            <idcible>0</idcible>
+            <ratio>2</ratio>
+            <typeratio>GAIN</typeratio>
+            <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+            <name>upalier2</name>
+            <logo>/logos/palier1</logo>
+            <seuil>1000</seuil>
+            <idcible>0</idcible>
+            <ratio>2</ratio>
+            <typeratio>GAIN</typeratio>
+            <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+            <name>upalier3</name>
+            <logo>/logos/palier1</logo>
+            <seuil>5000</seuil>
+            <idcible>0</idcible>
+            <ratio>2</ratio>
+            <typeratio>GAIN</typeratio>
+            <unlocked>false</unlocked>
+        </pallier>
     </upgrades>
     <angelupgrades>
+        <pallier>
+            <name>anpalier1</name>
+            <logo>/logos/palier1</logo>
+            <seuil>200</seuil>
+            <idcible>1</idcible>
+            <ratio>2</ratio>
+            <typeratio>ANGEL</typeratio>
+            <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+            <name>anpalier2</name>
+            <logo>/logos/palier1</logo>
+            <seuil>1000</seuil>
+            <idcible>1</idcible>
+            <ratio>2</ratio>
+            <typeratio>ANGEL</typeratio>
+            <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+            <name>anpalier3</name>
+            <logo>/logos/palier1</logo>
+            <seuil>5000</seuil>
+            <idcible>1</idcible>
+            <ratio>2</ratio>
+            <typeratio>ANGEL</typeratio>
+            <unlocked>false</unlocked>
+        </pallier>
     </angelupgrades>
     <managers>
     </managers>
