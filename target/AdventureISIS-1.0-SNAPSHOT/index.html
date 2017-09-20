@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head> 
+    <style>
+        * { border: 1px solid red; } 
+    </style>
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+<script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"> </script>
+
+<script type="text/javascript"  src="index.js"></script>
+
+</head> 
+<body> 
+    <div class="container-fluid"> 
+        <div class="row"> 
+            <div class="col-md-4">Entete1</div> 
+            <div class="col-md-4">Entete2</div> 
+            <div class="col-md-4">Entete3</div> 
+        </div> 
+        <div class="row"> 
+            <div class="col-md-2">Partie Gauche</div> 
+            <div class="col-md-10">Partie droite</div> 
+        </div> 
+    </div> 
+    
+    <div class="produit" id="Produit0">
+        <div class="logo"> <img src="logos/stormtrooper.jpg" style="width:304px;height:228px;" /> </div>
+        <div class="quantite "> 10 </div> 
+    </div> 
+    
+    <script type="text/javascript">
+         var count;
+         var template;
+         
+
+
+     for(count = 1; count < 6; count++){
+         var div = document.getElementById('Produit0'),
+         clone = $(div).clone(true); 
+         clone.attr("id", "Produit"+count); 
+         clone.appendTo($('div:first'));
+         
+         createBar(count);
+     }
+    
+    var serveurUrl = "http://localhost:8080/AdventureDictatorship/"; 
+    var currentWorld;
+    
+    
+    $(document).ready(function () {
+        $.getJSON(serveurUrl + "webresources/generic/world", function (world) { 
+            currentWorld = world;
+
+        }); 
+        
+
+       click();
+        
+    });
+
+
+
+
+     </script> 
+            
+ </body>
+
+
+
