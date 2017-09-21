@@ -4,7 +4,7 @@
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xsi:noNamespaceSchemaLocation='src/main/resources/jaxb/worldSchema/worldType.xsd'>
     <name>Star Wars World</name>
-    <logo>/logos/world.jpg</logo>
+    <logo>logos/world.jpg</logo>
     <money>0</money>
     <score>0</score>
     <totalangels>0</totalangels>
@@ -15,18 +15,18 @@
         <product>
             <id>1</id>
             <name>Stormtrooper</name>
-            <logo>/logos/stormtrooper.jpg</logo>
+            <logo>logos/stormtrooper.jpg</logo>
             <cout>2</cout>
             <croissance>1</croissance>
             <revenu>1</revenu>
             <vitesse>5</vitesse>
-            <quantite>0</quantite>
+            <quantite>1</quantite>
             <timeleft>0</timeleft>
             <managerUnlocked>false</managerUnlocked>
             <palliers>
                 <pallier>
                     <name>palier1</name>
-                    <logo>/logos/palier1</logo>
+                    <logo>logos/palier1</logo>
                     <seuil>200</seuil>
                     <idcible>1</idcible>
                     <ratio>2</ratio>
@@ -35,7 +35,7 @@
                 </pallier>
                 <pallier>
                     <name>palier2</name>
-                    <logo>/logos/palier1</logo>
+                    <logo>logos/palier1</logo>
                     <seuil>1000</seuil>
                     <idcible>1</idcible>
                     <ratio>2</ratio>
@@ -44,7 +44,7 @@
                 </pallier>
                 <pallier>
                     <name>palier3</name>
-                    <logo>/logos/palier1</logo>
+                    <logo>logos/palier1</logo>
                     <seuil>5000</seuil>
                     <idcible>1</idcible>
                     <ratio>2</ratio>
@@ -56,7 +56,7 @@
         <product>
             <id>2</id>
             <name>TIE Starfighter</name>
-            <logo>/logos/tie.jpg</logo>
+            <logo>logos/tie.png</logo>
             <cout>5</cout>
             <croissance>2</croissance>
             <revenu>1</revenu>
@@ -67,7 +67,7 @@
             <palliers>
                 <pallier>
                     <name>palier1</name>
-                    <logo>/logos/palier1</logo>
+                    <logo>logos/palier1</logo>
                     <seuil>200</seuil>
                     <idcible>2</idcible>
                     <ratio>2</ratio>
@@ -76,7 +76,7 @@
                 </pallier>
                 <pallier>
                     <name>palier2</name>
-                    <logo>/logos/palier1</logo>
+                    <logo>logos/palier1</logo>
                     <seuil>1000</seuil>
                     <idcible>2</idcible>
                     <ratio>2</ratio>
@@ -85,7 +85,7 @@
                 </pallier>
                 <pallier>
                     <name>palier3</name>
-                    <logo>/logos/palier1</logo>
+                    <logo>logos/palier1</logo>
                     <seuil>5000</seuil>
                     <idcible>2</idcible>
                     <ratio>2</ratio>
@@ -97,7 +97,7 @@
         <product>
             <id>10</id>
             <name>Death Star</name>
-            <logo>/logos/deathstar.jpg</logo>
+            <logo>logos/deathstar.png</logo>
             <cout>1000000000</cout>
             <croissance>50000</croissance>
             <revenu>20000000</revenu>
@@ -108,7 +108,7 @@
             <palliers>
                 <pallier>
                     <name>palier1</name>
-                    <logo>/logos/palier1</logo>
+                    <logo>logos/palier1</logo>
                     <seuil>200</seuil>
                     <idcible>10</idcible>
                     <ratio>2</ratio>
@@ -117,7 +117,7 @@
                 </pallier>
                 <pallier>
                     <name>palier2</name>
-                    <logo>/logos/palier1</logo>
+                    <logo>logos/palier1</logo>
                     <seuil>1000</seuil>
                     <idcible>10</idcible>
                     <ratio>2</ratio>
@@ -126,7 +126,7 @@
                 </pallier>
                 <pallier>
                     <name>palier3</name>
-                    <logo>/logos/palier1</logo>
+                    <logo>logos/palier1</logo>
                     <seuil>5000</seuil>
                     <idcible>10</idcible>
                     <ratio>2</ratio>
@@ -139,7 +139,7 @@
     <allunlocks>
         <pallier>
             <name>apalier1</name>
-            <logo>/logos/palier1</logo>
+            <logo>logos/palier1</logo>
             <seuil>200</seuil>
             <idcible>1</idcible>
             <ratio>2</ratio>
@@ -148,7 +148,7 @@
         </pallier>
         <pallier>
             <name>apalier2</name>
-            <logo>/logos/palier1</logo>
+            <logo>logos/palier1</logo>
             <seuil>1000</seuil>
             <idcible>1</idcible>
             <ratio>2</ratio>
@@ -157,7 +157,7 @@
         </pallier>
         <pallier>
             <name>apalier3</name>
-            <logo>/logos/palier1</logo>
+            <logo>logos/palier1</logo>
             <seuil>5000</seuil>
             <idcible>1</idcible>
             <ratio>2</ratio>
@@ -168,7 +168,7 @@
     <upgrades>
         <pallier>
             <name>upalier1</name>
-            <logo>/logos/palier1</logo>
+            <logo>logos/palier1</logo>
             <seuil>200</seuil>
             <idcible>0</idcible>
             <ratio>2</ratio>
@@ -177,7 +177,7 @@
         </pallier>
         <pallier>
             <name>upalier2</name>
-            <logo>/logos/palier1</logo>
+            <logo>logos/palier1</logo>
             <seuil>1000</seuil>
             <idcible>0</idcible>
             <ratio>2</ratio>
@@ -186,7 +186,7 @@
         </pallier>
         <pallier>
             <name>upalier3</name>
-            <logo>/logos/palier1</logo>
+            <logo>logos/palier1</logo>
             <seuil>5000</seuil>
             <idcible>0</idcible>
             <ratio>2</ratio>
@@ -197,7 +197,7 @@
     <angelupgrades>
         <pallier>
             <name>anpalier1</name>
-            <logo>/logos/palier1</logo>
+            <logo>logos/palier1</logo>
             <seuil>200</seuil>
             <idcible>1</idcible>
             <ratio>2</ratio>
@@ -206,7 +206,7 @@
         </pallier>
         <pallier>
             <name>anpalier2</name>
-            <logo>/logos/palier1</logo>
+            <logo>logos/palier1</logo>
             <seuil>1000</seuil>
             <idcible>1</idcible>
             <ratio>2</ratio>
@@ -215,7 +215,7 @@
         </pallier>
         <pallier>
             <name>anpalier3</name>
-            <logo>/logos/palier1</logo>
+            <logo>logos/palier1</logo>
             <seuil>5000</seuil>
             <idcible>1</idcible>
             <ratio>2</ratio>
@@ -226,7 +226,7 @@
     <managers>
         <pallier>
             <name>mpalier1</name>
-            <logo>/logos/palier1</logo>
+            <logo>logos/palier1</logo>
             <seuil>5000</seuil>
             <idcible>1</idcible>
             <ratio>2</ratio>
@@ -235,7 +235,7 @@
         </pallier>
         <pallier>
             <name>mpalier2</name>
-            <logo>/logos/palier1</logo>
+            <logo>logos/palier1</logo>
             <seuil>5000</seuil>
             <idcible>2</idcible>
             <ratio>2</ratio>
@@ -244,7 +244,7 @@
         </pallier>
         <pallier>
             <name>mpalier3</name>
-            <logo>/logos/palier1</logo>
+            <logo>logos/palier1</logo>
             <seuil>5000</seuil>
             <idcible>10</idcible>
             <ratio>2</ratio>

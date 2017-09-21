@@ -17,23 +17,37 @@
 
 <script type="text/javascript"  src="index.js"></script>
 
+<script src="https://unpkg.com/split.js/split.min.js"></script>
+
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "index.css" />
+
 </head> 
 <body> 
     <div class="container-fluid"> 
         <div class="row"> 
-            <div class="col-md-4">Entete1</div> 
-            <div class="col-md-4">Entete2</div> 
-            <div class="col-md-4">Entete3</div> 
+            <div class="argent">$ : </div> 
+            <div class="score">Score : </div> 
+            <div class="multiplicator">x1</div> 
         </div> 
         <div class="row"> 
-            <div class="col-md-2">Partie Gauche</div> 
+            <div class="col-md-2">
+                Partie Gauche
+                <div class="links">
+                <a href="#Produits">Produits</a>
+                <a href="#Managers">Managers</a>
+                </div>
+            
+            </div> 
             <div class="col-md-10">Partie droite</div> 
         </div> 
     </div> 
     
-    <div class="produit" id="Produit0">
+    <div class="produit" id="template">
         <div class="logo"> <img src="logos/stormtrooper.jpg" style="width:304px;height:228px;" /> </div>
-        <div class="quantite "> 10 </div> 
+        <div class="quantite"> 10 </div> 
+        <button class="buy" type="button">Acheter usine</button>
     </div> 
     
     <script type="text/javascript">
@@ -42,15 +56,7 @@
          
 
 
-     for(count = 1; count < 6; count++){
-         var div = document.getElementById('Produit0'),
-         clone = $(div).clone(true); 
-         clone.attr("id", "Produit"+count); 
-         clone.appendTo($('div:first'));
-         
-         createBar(count);
-     }
-    
+ 
     var serveurUrl = "http://localhost:8080/AdventureDictatorship/"; 
     var currentWorld;
     
@@ -58,11 +64,20 @@
     $(document).ready(function () {
         $.getJSON(serveurUrl + "webresources/generic/world", function (world) { 
             currentWorld = world;
+        
+        initProducts();
+
+        Split(['#one', '#two'], {
+            direction: 'vertical'
+        })
 
         }); 
         
 
        click();
+       
+       setInterval(function() { calcScore(); }, 100);
+
         
     });
 
