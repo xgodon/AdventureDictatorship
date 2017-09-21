@@ -9,3 +9,5 @@ and open the template in the editor.
 */
 
 img { cursor: pointer; }
+
+#managers { display: none; }

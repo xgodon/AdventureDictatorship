@@ -32,59 +32,29 @@
             <div class="multiplicator">x1</div> 
         </div> 
         <div class="row"> 
-            <div class="col-md-2">
-                Partie Gauche
+            <div id="gauche" class="col-md-2">
                 <div class="links">
-                <a href="#Produits">Produits</a>
-                <a href="#Managers">Managers</a>
+                <a href="#produits">Produits</a>
+                <hr>
+                <a href="#managers">Managers</a>
                 </div>
             
             </div> 
-            <div class="col-md-10">Partie droite</div> 
+            <div id="droite" class="col-md-10">
+                <div id="managers" class="panels">Partie manaaager</div>
+                <div id="produits" class="panels"></div>
+                
+            </div>
+             
         </div> 
     </div> 
     
-    <div class="produit" id="template">
-        <div class="logo"> <img src="logos/stormtrooper.jpg" style="width:304px;height:228px;" /> </div>
-        <div class="quantite"> 10 </div> 
-        <button class="buy" type="button">Acheter usine</button>
+    <div class="produit" id="template" style="visibility: hidden">
+        <div  class="logo col-md-1"> <img src="logos/stormtrooper.jpg" style="width:304px;height:228px;" /> </div>
+        <div   class="quantite col-md-1"> 10 </div> 
+        <button  class="buy col-md-1" type="button">Acheter usine</button>
     </div> 
     
-    <script type="text/javascript">
-         var count;
-         var template;
-         
-
-
- 
-    var serveurUrl = "http://localhost:8080/AdventureDictatorship/"; 
-    var currentWorld;
-    
-    
-    $(document).ready(function () {
-        $.getJSON(serveurUrl + "webresources/generic/world", function (world) { 
-            currentWorld = world;
-        
-        initProducts();
-
-        Split(['#one', '#two'], {
-            direction: 'vertical'
-        })
-
-        }); 
-        
-
-       click();
-       
-       setInterval(function() { calcScore(); }, 100);
-
-        
-    });
-
-
-
-
-     </script> 
             
  </body>
 

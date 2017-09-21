@@ -9,10 +9,32 @@ var score = 0;
 var argent = 0;
 var multiplicator=1;
 var audio = new Audio('audio/laser.mp3');
+var count;
+var template;
+var serveurUrl = "http://localhost:8080/AdventureDictatorship/"; 
+var currentWorld;
+    
+    
+    $(document).ready(function () {
+        $.getJSON(serveurUrl + "webresources/generic/world", function (world) { 
+            currentWorld = world;
+        
+        initProducts();
 
 
-//incQuant(id);
 
+        }); 
+        
+
+
+       click();
+       
+       setInterval(function() { calcScore(); }, 100);
+
+
+    });
+    
+    
 function calcScore(){
     //console.log("a");
     bars.forEach(function(b) {
@@ -70,7 +92,8 @@ function initProducts (){
         var div = document.getElementById('template'),
         clone = $(div).clone(true); 
         clone.attr("id", "Produit"+index); 
-        clone.appendTo($(".col-md-10"));
+        clone.attr("style", null);
+        clone.appendTo($("#produits"));
         //clone.appendTo($("div:first"));
         $("#Produit"+index +" .quantite").html(product.quantite);
         
@@ -90,6 +113,14 @@ function click(){
     clickLogo();
     clickMulti();
     clickBuy();
+    clickPanel();
+}
+
+function clickPanel(){
+$(".links a").click(function() {
+  $(".panels").hide();
+  $(this.hash).fadeIn();
+});
 }
 
 function clickBuy(){
@@ -177,7 +208,7 @@ function disponible(id){
     return false;
 }
 function createBar(id){
-    var bar = new ProgressBar.Line("#Produit"+id,
+    var bar = new ProgressBar.Line("#Produit"+id ,
     {  
         strokeWidth: 4,
         easing: 'easeInOut',

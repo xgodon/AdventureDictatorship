@@ -225,8 +225,8 @@
     </angelupgrades>
     <managers>
         <pallier>
-            <name>mpalier1</name>
-            <logo>logos/palier1</logo>
+            <name>Fabien</name>
+            <logo>logos/fabien.png</logo>
             <seuil>5000</seuil>
             <idcible>1</idcible>
             <ratio>2</ratio>
@@ -234,8 +234,8 @@
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
-            <name>mpalier2</name>
-            <logo>logos/palier1</logo>
+            <name>Dark Vador</name>
+            <logo>logos/darkvador.png</logo>
             <seuil>5000</seuil>
             <idcible>2</idcible>
             <ratio>2</ratio>
@@ -243,8 +243,8 @@
             <unlocked>false</unlocked>
         </pallier>
         <pallier>
-            <name>mpalier3</name>
-            <logo>logos/palier1</logo>
+            <name>Palpatinage</name>
+            <logo>logos/palpatine.png</logo>
             <seuil>5000</seuil>
             <idcible>10</idcible>
             <ratio>2</ratio>
