@@ -5,7 +5,7 @@
     xsi:noNamespaceSchemaLocation='src/main/resources/jaxb/worldSchema/worldType.xsd'>
     <name>Star Wars World</name>
     <logo>logos/world.jpg</logo>
-    <money>99999999</money>
+    <money>10000</money>
     <score>0</score>
     <totalangels>0</totalangels>
     <activeangels>0</activeangels>
@@ -15,7 +15,7 @@
         <product>
             <id>1</id>
             <name>Stormtrooper</name>
-            <logo>logos/stormtrooper.jpg</logo>
+            <logo>logos/stormtrooper.png</logo>
             <cout>2</cout>
             <croissance>2</croissance>
             <revenu>1</revenu>
@@ -59,7 +59,7 @@
             <logo>logos/tie.png</logo>
             <cout>5</cout>
             <croissance>2</croissance>
-            <revenu>1</revenu>
+            <revenu>100</revenu>
             <vitesse>8</vitesse>
             <quantite>0</quantite>
             <timeleft>0</timeleft>

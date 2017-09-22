@@ -20,7 +20,7 @@ import javax.xml.bind.Unmarshaller;
 public class Services {
 
     
-public World  readWorldFromXml() {
+public World  readWorldFromXml(String userName) {
 
     World w = null;
  try {
@@ -39,11 +39,11 @@ public World  readWorldFromXml() {
     return w;
 }
 
-public void saveWordlToXml(World w) {
+public void saveWordlToXml(World w, String userName) {
     
     try {
 
-		File file = new File("file.xml");
+		File file = new File(userName+"_world.xml");
 		JAXBContext jaxbContext = JAXBContext.newInstance(World.class);
 		Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 

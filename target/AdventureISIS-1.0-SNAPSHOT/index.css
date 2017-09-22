@@ -8,13 +8,38 @@ and open the template in the editor.
     Author     : admin
 */
 body {
-    background-image: url("images/clone2.jpg");
+    /*  background-image: url("images/clone2.jpg");*/
+    background-image: url("images/bg.png");
+    background-size:cover;
+}
+
+#angels {
+    width: 2000px;
+    height: 1000px;
+    position: relative;
+}
+#myAnimation {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+
+}
+
+* {
+ color: #ffffff ;
 }
 
 #container {
   margin: 20px;
   width: 400px;
   height: 8px;
+}
+
+.produit {
+    border: 2px solid;
+    border-radius: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 /*.produit  {

@@ -71,7 +71,7 @@ function clickMulti(){
             default:
                 multiplicator=100
         }
-        refrechMult();
+        refreshMult();
         
     });
     

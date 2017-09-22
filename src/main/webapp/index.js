@@ -91,7 +91,7 @@ function achatFactory(id){
         default:
             m=1
     }
-    
+
     if (m==1){
         cout= prixBase;
         
@@ -111,8 +111,9 @@ function achatFactory(id){
     }
     else {
         cout= prixBase*  (Math.pow(p.croissance, m) -1 )/ (p.croissance-1);
-        
+     
         if ( isRetirable(cout)) {
+            
             // Calcul du prix du prochain achat
             prixBase = prixBase*  (Math.pow(p.croissance, m));
             // Set du prix du prochain item acheté

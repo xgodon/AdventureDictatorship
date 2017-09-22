@@ -7,6 +7,7 @@ package com.mycompany.adventureisis;
 
 import com.google.gson.Gson;
 import generated.World;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
@@ -43,17 +44,20 @@ public class GenericResource {
     @GET
     @Path("world")
     @Produces(MediaType.APPLICATION_XML)
-    public World getXml() {
+    public World getXml(@Context HttpServletRequest request) {
+        String username = request.getHeader("X-user");
+
         //TODO return proper representation object
-        return monService.readWorldFromXml();
+        return monService.readWorldFromXml(username);
     }
     
     @GET
     @Path("world")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getJson() {
+    public String getJson(@Context HttpServletRequest request) {
+        String username = request.getHeader("X-user");
         //TODO return proper representation object
-        return new Gson().toJson(monService.readWorldFromXml());
+        return new Gson().toJson(monService.readWorldFromXml(username));
     }
 
     /**

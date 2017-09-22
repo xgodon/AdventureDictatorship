@@ -63,18 +63,25 @@
                     <hr>
                     <a  id="managersbutton" class="buttonleft btn btn-primary btn-lg"  href="#managers"><span class="badge"></span>Managers</a>
                     <hr>
-                    <a  class="buttonleft btn btn-primary btn-lg" href="#managers"><span class="badge"></span>Unlock</a>
+                    <a  class="buttonleft btn btn-primary btn-lg" href="#unlocks"><span class="badge"></span>Unlocks</a>
                     <hr>
-                    <a  class="buttonleft btn btn-primary btn-lg"  href="#managers"><span class="badge"></span>Cash Upgrades</a>
+                    <a  class="buttonleft btn btn-primary btn-lg"  href="#cashupgrades"><span class="badge"></span>Cash Upgrades</a>
                     <hr>
-                    <a  class="buttonleft btn btn-primary btn-lg"  href="#managers">Angels</a>
+                    <a  class="buttonleft btn btn-primary btn-lg"  href="#angels">Angels</a>
                     
                 </div>
 
             </div> 
             <div id="droite" class="col-md-10">
-                <div id="managers" class="panels">Partie manaaager</div>
+                <div id="managers" class="panels"></div>
                 <div id="produits" class="panels"></div>
+                <div id="unlocks" class="panels">unlocks</div>
+                <div id="cashupgrades" class="panels">cashupgrades</div>
+                <div id="angels" class="panels">
+                    angels
+                    <div id ="myAnimation" onclick="myMove()"> <img src="images/angel.png"/></div>
+                    
+                </div>
 
             </div>
 
@@ -84,7 +91,7 @@
     <div class="row produit" id="template" style="visibility: hidden">
         <div  class="logo col-md-4"> <img src="logos/stormtrooper.jpg" style="width:304px;height:228px;" /> </div>
         <div   class="quantite col-md-1"> 10 </div> 
-        <button  class="buyProduct col-md-1" type="button">Acheter usine de production de ce Produit</button>
+        <button  class="buyProduct col-md-1 btn-default" type="button">Acheter usine de production de ce Produit</button>
         <div  class="cout col-md-1">"cout de la prochaine usine : " +</div>
         <div id="container" class="col-md-1"></div>
     </div> 
