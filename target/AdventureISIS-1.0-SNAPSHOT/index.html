@@ -1,62 +1,102 @@
 <!DOCTYPE html>
 
 <head> 
-    <style>
+<!--    <style>
         * { border: 1px solid red; } 
-    </style>
- <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </style>-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
-<script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"> </script>
+    <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
+    <link href="lib/toastr/toastr.scss" rel="stylesheet"/>
+    <script src="lib/toastr/toastr.js" ></script> 
+    
 
-<script type="text/javascript"  src="index.js"></script>
+    <script type="text/javascript"  src="index.js"></script>
+    <script type="text/javascript"  src="click.js"></script>
+    <script type="text/javascript"  src="is.js"></script>
+    <script type="text/javascript"  src="refresh.js"></script>
+    
+    <script type="text/javascript"  src="init.js"></script>
+    
+    <script src="https://unpkg.com/split.js/split.min.js"></script>
 
-<script src="https://unpkg.com/split.js/split.min.js"></script>
-
-<link rel = "stylesheet"
-   type = "text/css"
-   href = "index.css" />
+    <link rel = "stylesheet"
+          type = "text/css"
+          href = "index.css" />
 
 </head> 
+
+
 <body> 
+    <hr>
     <div class="container-fluid"> 
         <div class="row"> 
-            <div class="argent">$ : </div> 
-            <div class="score">Score : </div> 
-            <div class="multiplicator">x1</div> 
+            <div class="col-md-3 argent">$ : </div> 
+            <div class="col-md-3 score">Score : </div> 
+            <div class="col-md-3 multiplicator">x1</div> 
+            <div class="col-md-3 form-group">
+                <label for="input">Name</label>
+                 <input type="text" class="pseudo form-control" id="input" placeholder="Jane Doe">
+            </div> 
+            
         </div> 
+        
+        
+        
+          <div class="form-group">
+    <label for="exampleInputName2">Name</label>
+    
+  </div>
+        
+        <hr>
         <div class="row"> 
             <div id="gauche" class="col-md-2">
                 <div class="links">
-                <a href="#produits">Produits</a>
-                <hr>
-                <a href="#managers">Managers</a>
+                    <a  class="buttonleft btn btn-primary btn-lg" href="#produits">Produits</a>
+                    <hr>
+                    <a  id="managersbutton" class="buttonleft btn btn-primary btn-lg"  href="#managers"><span class="badge"></span>Managers</a>
+                    <hr>
+                    <a  class="buttonleft btn btn-primary btn-lg" href="#managers"><span class="badge"></span>Unlock</a>
+                    <hr>
+                    <a  class="buttonleft btn btn-primary btn-lg"  href="#managers"><span class="badge"></span>Cash Upgrades</a>
+                    <hr>
+                    <a  class="buttonleft btn btn-primary btn-lg"  href="#managers">Angels</a>
+                    
                 </div>
-            
+
             </div> 
             <div id="droite" class="col-md-10">
                 <div id="managers" class="panels">Partie manaaager</div>
                 <div id="produits" class="panels"></div>
-                
+
             </div>
-             
+
         </div> 
     </div> 
-    
-    <div class="produit" id="template" style="visibility: hidden">
-        <div  class="logo col-md-1"> <img src="logos/stormtrooper.jpg" style="width:304px;height:228px;" /> </div>
+
+    <div class="row produit" id="template" style="visibility: hidden">
+        <div  class="logo col-md-4"> <img src="logos/stormtrooper.jpg" style="width:304px;height:228px;" /> </div>
         <div   class="quantite col-md-1"> 10 </div> 
-        <button  class="buy col-md-1" type="button">Acheter usine</button>
+        <button  class="buyProduct col-md-1" type="button">Acheter usine de production de ce Produit</button>
+        <div  class="cout col-md-1"></div>
+        <div id="container" class="col-md-1"></div>
     </div> 
-    
-            
- </body>
+
+    <div class="row manager" id="templateManager" style="visibility: hidden">
+        <div  class="col-md-4 logoManager"> <img src="logos/stormtrooper.jpg" style="width:304px;height:228px;" /> </div>
+        <div   class="unlock col-md-1">NOT UNLOCKED</div> 
+        <div   class="price col-md-1">999999</div>
+        <button  class="buyManager col-md-1" type="button">Engager pour le bien de l'humanité</button>
+    </div> 
+
+</body>
 
 
 

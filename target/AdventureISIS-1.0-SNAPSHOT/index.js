@@ -13,41 +13,29 @@ var count;
 var template;
 var serveurUrl = "http://localhost:8080/AdventureDictatorship/"; 
 var currentWorld;
-    
-    
-    $(document).ready(function () {
-        $.getJSON(serveurUrl + "webresources/generic/world", function (world) { 
-            currentWorld = world;
-        
-        initProducts();
 
 
 
-        }); 
-        
 
 
-       click();
-       
-       setInterval(function() { calcScore(); }, 100);
-
-
-    });
-    
-    
 function calcScore(){
     //console.log("a");
     bars.forEach(function(b) {
-        //console.log("a");
+        var id = bars.indexOf(b);
         if (b.value() == 1){
             
             // reset Bar
             b.set(0);
             audio.play();
             
-            var id = bars.indexOf(b);
             
-            incArgent(id);
+            
+            succesVente(id);
+        }
+        
+        if (b.value() == 0 && currentWorld.managers.pallier[id].unlocked == true){
+            
+            launchProduction(id);
         }
         
     });
@@ -56,10 +44,9 @@ function calcScore(){
     
 }
 
-function incArgent(id){
+function succesVente(id){
     var plusvalue = currentWorld.products.product[id].revenu * currentWorld.products.product[id].quantite;
-    argent = argent + plusvalue;
-    refrechArgent();
+    deposer(plusvalue);
     incScore(plusvalue)
 }
 
@@ -69,157 +56,119 @@ function incScore(plusvalue){
     refrechScore();
 }
 
-function  refrechArgent(){
-    $(".argent").html("$ : "+ argent);
-}
 
-function refrechScore(){
-    $(".score").html("Score : "+ score);
-}
-
-function refrechMult(){
-    $(".multiplicator").html("Mult : "+multiplicator);
-}
 
 function incQuant(id){
     currentWorld.products.product[id].quantite = currentWorld.products.product[id].quantite+1;
     $("#Produit"+id +" .quantite").html(currentWorld.products.product[id].quantite);
 }
 
-function initProducts (){
-    $.each(currentWorld.products.product, function (index, product) {
-        
-        var div = document.getElementById('template'),
-        clone = $(div).clone(true); 
-        clone.attr("id", "Produit"+index); 
-        clone.attr("style", null);
-        clone.appendTo($("#produits"));
-        //clone.appendTo($("div:first"));
-        $("#Produit"+index +" .quantite").html(product.quantite);
-        
-        $("#Produit"+index +" .logo > :first-child" ).attr("src",product.logo);
-        
-        createBar(index);
-        
-        
-    });
-}
+
+
 
 function launchProduction(id){
     bars[id].animate(1, {duration: 1000});
 }
 
-function click(){
-    clickLogo();
-    clickMulti();
-    clickBuy();
-    clickPanel();
-}
 
-function clickPanel(){
-$(".links a").click(function() {
-  $(".panels").hide();
-  $(this.hash).fadeIn();
-});
-}
-
-function clickBuy(){
-    $(".buy").click(function (event) {
-        var id = $(this).parents(".produit").attr("id").substr(7);
-        
-        if ( achetable(id) ){
-            achatFactory(id);
-        }
-    });
-    
-}
 
 function achatFactory(id){
+    
+    var p = currentWorld.products.product[id];
+    var prixBase =p.cout;
+    var m = 0;
+    var cout = 0;
+    
+    switch(multiplicator) {
+        case 1:
+        case 10:
+        case 100:
+            m=multiplicator
+            break;
+        case "max":
+            m= parseInt(Math.log(1-(currentWorld.money/prixBase)*(1-p.croissance))/Math.log(p.croissance));
+            break;
+        default:
+            m=1
+    }
+    
+    if (m==1){
+        cout= prixBase;
+        
+        if ( isRetirable(cout)) {
+            // Calcul du prix du prochain achat
+            prixBase = prixBase*p.croissance;
+            // Set du prix du prochain item acheté
+            currentWorld.products.product[id].cout=prixBase;
+            //raffraichissage du prix affiché de l'usine
+            refrechCoutUsine(id);
+            //retrait de l'argent
+            retirer(cout);
+            // augmentation de la quantité d'usines affichées
+            incQuant(id);
+        }
+        
+    }
+    else {
+        cout= prixBase*  (Math.pow(p.croissance, m) -1 )/ (p.croissance-1);
+        
+        if ( isRetirable(cout)) {
+            // Calcul du prix du prochain achat
+            prixBase = prixBase*  (Math.pow(p.croissance, m));
+            // Set du prix du prochain item acheté
+            currentWorld.products.product[id].cout=prixBase;
+            //raffraichissage du prix affiché de l'usine
+            refrechCoutUsine(id);
+            //retrait de l'argent
+            retirer(cout);
+            // augmentation de la quantité d'usines affichées
+            incQuant(id);
+        }
+    }
+    
+ 
+    
+    
 
-//    
-//        switch(multiplicator) {
-//            case 1:
-//                multiplicator=10
-//                break;
-//            case 10:
-//            case 100:
-//                multiplicator="max"
-//                break;
-//            case "max":
-//                var quantiteMax= parseInt(Math.log(1-(world.money/prixDernierAchat)*(1-product.croissance))/Math.log(product.croissance));
-//                break;
-//            default:
-//                multiplicator=100
-//        }
-                
-    argent = argent - currentWorld.products.product[id].cout;
+    
+}
+function retirer(thunes){
+    argent = argent - thunes;
     refrechArgent();
-    incQuant(id);
+}
+
+function deposer(thunes){
+    argent = argent + thunes;
+    refrechArgent();
+}
+
+function achatManager(id){
+    
+
+    
+    retirer (currentWorld.managers.pallier[id].seuil);
+    
+    unlockManager(id);
+    $("#managersbutton .badge").text("New");
+    toastr["info"]("Manager Hired ! ");
+
     
 }
 
-function achetable(id){
-
-    if (currentWorld.products.product[id].cout < argent ){
-        return true
-    }
-    return false
+function unlockManager(id){
+    currentWorld.managers.pallier[id].unlocked = true;
+    currentWorld.products.product[id].managerUnlocked = true;
+    refreshManager(id);
 }
 
-function clickLogo(){
-    $(".logo").click(function (event) {
-        var id = $(this).parents(".produit").attr("id").substr(7);
-        
-        if ( disponible(id) ){
-            launchProduction(id);
-        }
-    });
-}
-
-function clickMulti(){
-    $(".multiplicator").click(function (event) {
-        switch(multiplicator) {
-            case 1:
-                multiplicator=10
-                break;
-            case 10:
-                multiplicator=100
-                break;
-            case 100:
-                multiplicator="max"
-                break;
-            case "max":
-                multiplicator=1
-                break;
-            default:
-                multiplicator=100
-        }
-        refrechMult();
-        
-    });
-    
-    
-}
-
-function disponible(id){
-    if (bars[id].value() == 0 ){
-        return true;
-    }
-    return false;
-}
-function createBar(id){
-    var bar = new ProgressBar.Line("#Produit"+id ,
-    {  
-        strokeWidth: 4,
-        easing: 'easeInOut',
-        duration: 1400,
-        color: '#00ff00',
-        trailColor: '#eee',
-        trailWidth: 1,
-        svgStyle: {width: '100%', height: '100%'}
-        
-        
-    });
-    bars.push(bar);
-    
+function formatNumber(number) {
+if (number < 1000)
+ number = number.toFixed(2);
+ else if (number < 1000000)
+ number = number.toFixed(0);
+ else if (number >= 1000000) {
+ number = number.toPrecision(4);
+ number = number.replace(/e\+(.*)/, " 10<sup>$1</sup>");
+ }
+return number;
 }

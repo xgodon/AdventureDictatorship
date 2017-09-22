@@ -7,7 +7,24 @@ and open the template in the editor.
     Created on : 21 sept. 2017, 16:16:59
     Author     : admin
 */
+body {
+    background-image: url("images/clone2.jpg");
+}
 
-img { cursor: pointer; }
+#container {
+  margin: 20px;
+  width: 400px;
+  height: 8px;
+}
 
-#managers { display: none; }
+/*.produit  {
+    text-align:center;
+}*/
+
+.logo { cursor: pointer; }
+
+.multiplicator { cursor: pointer; }
+
+.panels { display: none; }
+
+#produits { display: inline; }
