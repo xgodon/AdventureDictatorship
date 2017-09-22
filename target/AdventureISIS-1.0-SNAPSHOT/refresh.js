@@ -3,17 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+function refreshAll(){
+    refreshArgent();
+    refreshScore();
+    refreshMult();
 
+}
 
-function  refrechArgent(){
+function  refreshArgent(){
     $(".argent").html("$ : "+ formatNumber(argent));
 }
 
-function refrechScore(){
+function refreshScore(){
     $(".score").html("Score : "+ formatNumber(score));
 }
 
-function refrechMult(){
+function refreshMult(){
     $(".multiplicator").html("Mult : "+multiplicator);
 }
 
@@ -26,6 +31,9 @@ function refreshManager(id){
         $("#Manager"+id +" .unlock").html(status);
 }
 
-function refrechCoutUsine(id){
-    $("#Produit"+id +" .cout" ).html(currentWorld.products.product[id].cout)
+function refreshCoutUsine(id){
+    $("#Produit"+id +" .cout" ).html("cout de la prochaine usine : " +currentWorld.products.product[id].cout)
+}
+function refreshNbrUsines(id){
+    $("#Produit"+id +" .quantite").html("nombre d'usines : "+ currentWorld.products.product[id].quantite);
 }

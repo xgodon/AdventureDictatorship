@@ -53,14 +53,14 @@ function succesVente(id){
 function incScore(plusvalue){
     
     score = score + plusvalue;
-    refrechScore();
+    refreshScore();
 }
 
 
 
 function incQuant(id){
     currentWorld.products.product[id].quantite = currentWorld.products.product[id].quantite+1;
-    $("#Produit"+id +" .quantite").html(currentWorld.products.product[id].quantite);
+    refreshNbrUsines(id);
 }
 
 
@@ -101,7 +101,7 @@ function achatFactory(id){
             // Set du prix du prochain item acheté
             currentWorld.products.product[id].cout=prixBase;
             //raffraichissage du prix affiché de l'usine
-            refrechCoutUsine(id);
+            refreshCoutUsine(id);
             //retrait de l'argent
             retirer(cout);
             // augmentation de la quantité d'usines affichées
@@ -118,7 +118,7 @@ function achatFactory(id){
             // Set du prix du prochain item acheté
             currentWorld.products.product[id].cout=prixBase;
             //raffraichissage du prix affiché de l'usine
-            refrechCoutUsine(id);
+            refreshCoutUsine(id);
             //retrait de l'argent
             retirer(cout);
             // augmentation de la quantité d'usines affichées
@@ -134,12 +134,12 @@ function achatFactory(id){
 }
 function retirer(thunes){
     argent = argent - thunes;
-    refrechArgent();
+    refreshArgent();
 }
 
 function deposer(thunes){
     argent = argent + thunes;
-    refrechArgent();
+    refreshArgent();
 }
 
 function achatManager(id){

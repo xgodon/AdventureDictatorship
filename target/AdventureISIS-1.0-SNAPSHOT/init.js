@@ -107,8 +107,8 @@ $(document).ready(function () {
             
             score = currentWorld.score;
             argent = currentWorld.money;
-            refrechArgent();
-            refrechScore();
+            refreshAll();
+
             
             
 
